@@ -54,6 +54,9 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Security</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -128,15 +131,20 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckFilers" sap:VirtualizedContainerService.HintSize="956.6666666666666,18762" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckFilers" sap:VirtualizedContainerService.HintSize="956.6666666666666,18990.666666666668" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd2:DataTable" Name="dtTable" />
+      <Variable x:TypeArguments="x:String" Name="variable1" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="522,18739.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="522,18968" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -154,13 +162,13 @@
           </InArgument>
         </ar:infoStep.str_in_testId>
       </ar:infoStep>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge 27b - Awwwards" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,18269.333333333332" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge 27b - Awwwards" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,18498" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,18074.666666666668" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,18303.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="Category" />
                 <Variable x:TypeArguments="x:String" Name="Tag" />
@@ -175,17 +183,30 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ExcelData - Invoke Workflow File (ExcelData.xaml)" sap:VirtualizedContainerService.HintSize="452,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ExcelData.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="upr:IResource" x:Key="excelPath">
-                    <CSharpValue x:TypeArguments="upr:IResource" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">UiPath.Platform.ResourceHandling.LocalResource.FromPath("TestData\\Group07_DataFetching.xlsx")</CSharpValue>
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="sheetName">nihar</InArgument>
-                  <OutArgument x:TypeArguments="sd2:DataTable" x:Key="out_dtTable">
-                    <CSharpReference x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">DT_table</CSharpReference>
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="452,229.33333333333334" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="nihar">
+                <ui:ReadRange.DataTable>
+                  <OutArgument x:TypeArguments="sd2:DataTable">
+                    <CSharpReference x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">DT_table</CSharpReference>
                   </OutArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-              </ui:InvokeWorkflowFile>
+                </ui:ReadRange.DataTable>
+                <ui:ReadRange.WorkbookPathResource>
+                  <InArgument x:TypeArguments="upr:IResource">
+                    <CSharpValue x:TypeArguments="upr:IResource" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">UiPath.Platform.ResourceHandling.LocalResource.FromPath("TestData\\Group07_DataFetching.xlsx")</CSharpValue>
+                  </InArgument>
+                </ui:ReadRange.WorkbookPathResource>
+              </ui:ReadRange>
+              <Assign sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd2:DataTable">
+                    <CSharpReference x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">DT_table</CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd2:DataTable">
+                    <CSharpValue x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">dtTable</CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
               <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Explore'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="awwwards.com" CVScreenId="17e9e188-02ee-4c0d-a17d-0e822e4adda2" ContentHash="1GjDApL3w0-IEBUnP2P97Q" CvElementArea="263, 230, 21, 21" CvTextArea="204, 231, 58, 19" CvTextArgument="Explore" CvType="ArrowButton" DesignTimeRectangle="207, 210, 71, 64" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='SPAN' class='nav-header-main__link' /&gt;" Guid="d3547e7d-0951-48df-a12d-9fb4ed5f1766" InformativeScreenshot="b8eca00d8f049d60f481611d7288de07.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/_ovkczGZh0CZrjT_q2k1Fg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Awwwards - Website Awards - Best Web Design Trends' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
