@@ -1,0 +1,1361 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckFilers" this:CheckFilers.Color="#B42625" this:CheckFilers.int_reportID="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ar="clr-namespace:atuipath_utilities.Report;assembly=atuipath_utilities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Color" Type="InArgument(x:String)" />
+    <x:Property Name="suiteID" Type="OutArgument(x:String)" />
+    <x:Property Name="testID" Type="OutArgument(x:String)" />
+    <x:Property Name="int_reportID" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>atuipath_utilities.Report</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Jira.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>atuipath_utilities</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Text.Json</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CheckFilers" sap:VirtualizedContainerService.HintSize="956.6666666666666,18762" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="522,18739.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ar:infoStep str_in_actualStep="{x:Null}" str_in_expectedStep="{x:Null}" sap:VirtualizedContainerService.HintSize="488,387.3333333333333" sap2010:WorkflowViewState.IdRef="infoStep_2" str_in_stepDescription="Checks filters" str_in_stepName="Module: CheckFilters">
+        <ar:infoStep.str_in_reportId>
+          <InArgument x:TypeArguments="x:Int32">
+            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">int_reportID</CSharpValue>
+          </InArgument>
+        </ar:infoStep.str_in_reportId>
+        <ar:infoStep.str_in_testId>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">testID</CSharpValue>
+          </InArgument>
+        </ar:infoStep.str_in_testId>
+      </ar:infoStep>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge 27b - Awwwards" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,18269.333333333332" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,18074.666666666668" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="Category" />
+                <Variable x:TypeArguments="x:String" Name="Tag" />
+                <Variable x:TypeArguments="sd2:DataTable" Name="DT_table" />
+                <Variable x:TypeArguments="x:String" Name="Technology" />
+                <Variable x:TypeArguments="x:String" Name="Country" />
+                <Variable x:TypeArguments="x:String" Name="Font" />
+                <Variable x:TypeArguments="uix:ImageColorData" Name="ColorChosen" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="ExcelData - Invoke Workflow File (ExcelData.xaml)" sap:VirtualizedContainerService.HintSize="452,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ExcelData.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="upr:IResource" x:Key="excelPath">
+                    <CSharpValue x:TypeArguments="upr:IResource" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">UiPath.Platform.ResourceHandling.LocalResource.FromPath("TestData\\Group07_DataFetching.xlsx")</CSharpValue>
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="sheetName">nihar</InArgument>
+                  <OutArgument x:TypeArguments="sd2:DataTable" x:Key="out_dtTable">
+                    <CSharpReference x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">DT_table</CSharpReference>
+                  </OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Explore'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com" CVScreenId="17e9e188-02ee-4c0d-a17d-0e822e4adda2" ContentHash="1GjDApL3w0-IEBUnP2P97Q" CvElementArea="263, 230, 21, 21" CvTextArea="204, 231, 58, 19" CvTextArgument="Explore" CvType="ArrowButton" DesignTimeRectangle="207, 210, 71, 64" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='SPAN' class='nav-header-main__link' /&gt;" Guid="d3547e7d-0951-48df-a12d-9fb4ed5f1766" InformativeScreenshot="b8eca00d8f049d60f481611d7288de07.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/_ovkczGZh0CZrjT_q2k1Fg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Awwwards - Website Awards - Best Web Design Trends' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">"Explore Clicked"</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="452,168" sap2010:WorkflowViewState.IdRef="StepStatus_1" Status="Compare" StepDescription="Click on explore" StepName="Explore" TakeScreenshot="True">
+                <ra:StepStatus.ReportId>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">int_reportID</CSharpValue>
+                  </InArgument>
+                </ra:StepStatus.ReportId>
+                <ra:StepStatus.TestId>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">testID</CSharpValue>
+                  </InArgument>
+                </ra:StepStatus.TestId>
+              </ra:StepStatus>
+              <uix:NCheckState DisplayName="Check App State Explore Menu" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1225.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_actualStep="Explore menu expanded." str_in_expectedStep="Explore menu expanded." str_in_stepDescription="Click on explore" str_in_stepName="Explore menu opened">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_2" str_in_actualStep="Explore mneu not opened" str_in_expectedStep="Explore menu expanded." str_in_stepDescription="Click on explore" str_in_stepName="Explore menu opened">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com" ContentHash="enE2TCUtD02VsGzN1KghIQ" DesignTimeRectangle="79, 274, 1784, 540" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='nav-header-main__content' parentid='header' tag='DIV' /&gt;" Guid="a5f58251-4582-48db-a4bb-336213378779" InformativeScreenshot="3804559af3b3532ed4869cd9ad974a43.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/AIRybsLKjEqjQvtEc8MPIg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Awwwards - Website Awards - Best Web Design Trends' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Nominees'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com" CVScreenId="0dc8ff18-7a62-4194-ad28-c96011957d36" ContentHash="DJkelkNkZUWoLiQxjFukfA" CvTextArea="398, 341, 76, 16" CvTextArgument="Nominees" CvType="Text" DesignTimeRectangle="401, 339, 1019, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentclass='search-inspiration__item' parentid='header' idx='2' /&gt;" Guid="c7fe9914-8456-40b5-a51c-fb4df558cbec" InformativeScreenshot="907c3473bc9f69ebd103ab27c1b8426d.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/0lCDXSF7GEGLO5YClmYPmQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Awwwards - Website Awards - Best Web Design Trends' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">"Click Nominees"</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="452,168" sap2010:WorkflowViewState.IdRef="StepStatus_2" Status="Compare" StepDescription="Click on Nominees from explore" StepName="Nominees from explore" TakeScreenshot="True">
+                <ra:StepStatus.ReportId>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">int_reportID</CSharpValue>
+                  </InArgument>
+                </ra:StepStatus.ReportId>
+                <ra:StepStatus.TestId>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">testID</CSharpValue>
+                  </InArgument>
+                </ra:StepStatus.TestId>
+              </ra:StepStatus>
+              <uix:NCheckState DisplayName="Check App State 'Nominees'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1225.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_3" str_in_actualStep="Nominees menu opned" str_in_expectedStep="Nominees menu opened" str_in_stepDescription="Nominees button clicked." str_in_stepName="Nominees clicked.">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_3" str_in_actualStep="Nominees did not show up." str_in_expectedStep="Nominees menu opened" str_in_stepDescription="Nominees button clicked." str_in_stepName="Nominees clicked.">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/nominees" CVScreenId="94eece66-93e5-4862-aa2e-b691f02f21d2" ContentHash="vXBqDw6g5UKLv4n_GeR08A" CvTextArea="77, 467, 113, 18" CvTextArgument="Nominees 48K" CvType="Text" DesignTimeRectangle="79, 466, 114, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Nominees' class='breadcrumb-filters__title' /&gt;" Guid="71fa276b-be41-4c24-a49a-94a7ae30f5bf" InformativeScreenshot="70abc047ed7f693df503da68bbb734ad.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/yuLzuM2E0UGr6PokLpMhkw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nominees - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Category'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/nominees" CVScreenId="b00fb58a-2ad0-40bc-be16-e0f3ee4a8837" ContentHash="rPFjtgiHi0qw1Km_rIsroQ" CvElementArea="217, 351, 146, 58" CvTextArea="248, 371, 67, 19" CvTextArgument="Category" CvType="Button" DesignTimeRectangle="249, 363, 66, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Category' parentid='content' innertext='Category' /&gt;" Guid="ce9cd903-84cd-424c-b3ae-cf3a0e808d7b" InformativeScreenshot="55663a47cc161ceb56ffc593c0356a34.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/l0xja009HkKdwsWsRfKHOw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nominees - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NSelectItem DisplayName="Select Item 'Category(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,196" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Social responsibility" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Awards</x:String>
+                    <x:String xml:space="preserve">Category
+    Architecture
+                                            Art &amp; Illustration
+                                            Business &amp; Corporate
+                                            Culture &amp; Education
+                                            Design Agencies
+                                            E-Commerce
+                                            Events
+                                            Experimental
+                                            Fashion
+                                            Film &amp; TV
+                                            Food &amp; Drink
+                                            Games &amp; Entertainment
+                                            Hotel / Restaurant
+                                            Institutions
+                                            Luxury
+                                            Magazine / Newspaper / Blog
+                                            Mobile &amp; Apps
+                                            Music &amp; Sound
+                                            Other
+                                            Photography
+                                            Promotional
+                                            Real Estate
+                                            Social responsibility
+                                            Sports
+                                            Startups
+                                            Technology
+                                            Web &amp; Interactive</x:String>
+                    <x:String>Architecture</x:String>
+                    <x:String>Art &amp; Illustration</x:String>
+                    <x:String>Business &amp; Corporate</x:String>
+                    <x:String>Culture &amp; Education</x:String>
+                    <x:String>Design Agencies</x:String>
+                    <x:String>E-Commerce</x:String>
+                    <x:String>Events</x:String>
+                    <x:String>Experimental</x:String>
+                    <x:String>Fashion</x:String>
+                    <x:String>Film &amp; TV</x:String>
+                    <x:String>Food &amp; Drink</x:String>
+                    <x:String>Games &amp; Entertainment</x:String>
+                    <x:String>Hotel / Restaurant</x:String>
+                    <x:String>Institutions</x:String>
+                    <x:String>Luxury</x:String>
+                    <x:String>Magazine / Newspaper / Blog</x:String>
+                    <x:String>Mobile &amp; Apps</x:String>
+                    <x:String>Music &amp; Sound</x:String>
+                    <x:String>Other</x:String>
+                    <x:String>Photography</x:String>
+                    <x:String>Promotional</x:String>
+                    <x:String>Real Estate</x:String>
+                    <x:String>Social responsibility</x:String>
+                    <x:String>Sports</x:String>
+                    <x:String>Startups</x:String>
+                    <x:String>Technology</x:String>
+                    <x:String>Web &amp; Interactive</x:String>
+                    <x:String>Tag</x:String>
+                    <x:String>Technology</x:String>
+                    <x:String>Country</x:String>
+                    <x:String>Font</x:String>
+                    <x:String>Color</x:String>
+                    <x:String>1</x:String>
+                    <x:String>Reset filters</x:String>
+                    <x:String xml:space="preserve">index
+                                                                            PRO</x:String>
+                    <x:String>Peter Oravec</x:String>
+                    <x:String xml:space="preserve">ToyFight
+                                                                            PRO</x:String>
+                    <x:String>Jaeyi</x:String>
+                    <x:String>currymango</x:String>
+                    <x:String xml:space="preserve">tom-punch
+                                                                            PRO</x:String>
+                    <x:String>joshua-araya-bogantes</x:String>
+                    <x:String>PROMOTED</x:String>
+                    <x:String xml:space="preserve">Frontify
+                                                                            PRO</x:String>
+                    <x:String xml:space="preserve">Wondertabs
+                                                                            PRO</x:String>
+                    <x:String xml:space="preserve"> ️</x:String>
+                    <x:String>digital-kitchen</x:String>
+                    <x:String xml:space="preserve">Isaac Powell
+                                                                            PRO</x:String>
+                    <x:String>Significa</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/nominees" CVScreenId="827a30e2-dd25-4400-9931-b95ded309b67" ContentHash="kngRe-RXuUCO65Wsv-_b-g" CvElementArea="217, 351, 146, 58" CvTextArea="248, 371, 67, 19" CvTextArgument="Category" CvType="Button" DesignTimeRectangle="221, 355, 140, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;nav&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;span' idx='2' parentid='content' tag='SPAN' /&gt;" Guid="984fd453-0830-4732-bb14-ed9ed9606cd7" InformativeScreenshot="009adc57be761ba87a3f9204c0d298ca.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/2Xo0q0RH6UOnSd4ZaDwrYQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nominees - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NGetText DisplayName="Get Text 'Social responsibility'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,143.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/social-responsibility" CVScreenId="61c4d5f3-878d-4fb6-adc6-8a277b94003b" ContentHash="zRtghg6ul0KPR6f8NDGSGg" CvType="AnyWordGroup" DesignTimeRectangle="198, 466, 186, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Social responsibility' class='breadcrumb-filters__title' innertext='Social responsibility' /&gt;" Guid="210c340d-8e35-45bd-867e-2408dd7a10a9" InformativeScreenshot="282c989e6af04c9ed656bf1c34e84c50.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/eR6YtKiuXk6qAZO2jZsgsw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Best Social Responsibility Websites | Web Design Inspiration' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">Category</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <If sap:VirtualizedContainerService.HintSize="452,1016" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">Category=="Social Responsibily"</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Category selected successfully" str_in_expectedStep="Category selected successfully" str_in_stepDescription="Social responsibiity category selected" str_in_stepName="Category selected">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Category was not selected" str_in_expectedStep="Category selected successfully" str_in_stepDescription="Social responsibiity category selected" str_in_stepName="Category selected">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Tag'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/social-responsibility" CVScreenId="49dbf0b1-8920-4de2-bbb0-15bff56e89a5" ContentHash="VYx1dnhaXESm5vW6t0buow" CvElementArea="364, 351, 107, 58" CvTextArea="393, 371, 30, 19" CvTextArgument="Tag" CvType="Button" DesignTimeRectangle="368, 355, 100, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='3' parentid='content' tag='SPAN' class='nav-filters__item js-nav-filters-item' /&gt;" Guid="58694465-1fe5-498d-b0ea-7cc9bf5ca898" InformativeScreenshot="97ff3f54c63ded050e30b46907b4c15a.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/rZxLsg1-p0m34YmLKh53WQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Best Social Responsibility Websites | Web Design Inspiration' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NSelectItem DisplayName="Select Item 'Tag(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,196" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="Contact Page" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Explore</x:String>
+                    <x:String>Directory</x:String>
+                    <x:String xml:space="preserve">Academy
+									New</x:String>
+                    <x:String>Jobs</x:String>
+                    <x:String>Market</x:String>
+                    <x:String>Awards</x:String>
+                    <x:String>Category</x:String>
+                    <x:String xml:space="preserve">Tag
+    360
+                                            3D
+                                            404 pages
+                                            About Page
+                                            Animation
+                                            App Style
+                                            Big Background Images
+                                            Clean
+                                            Colorful
+                                            Contact Page
+                                            Content architecture
+                                            Contentful
+                                            Copy design
+                                            Data Visualization
+                                            Filters and Effects
+                                            Flat Design
+                                            Footer Design
+                                            Forms and Input
+                                            Fullscreen
+                                            Gallery
+                                            Gestures / Interaction
+                                            Graphic design
+                                            Header Design
+                                            Horizontal Layout
+                                            Icons
+                                            Illustration
+                                            Infinite Scroll
+                                            Interaction Design
+                                            Menu - Horizontal
+                                            Menu - Vertical
+                                            Microinteractions
+                                            Minimal
+                                            Navigation Menu
+                                            Parallax
+                                            Photo &amp; Video
+                                            Photographic
+                                            Portfolio
+                                            Project Page
+                                            Responsive
+                                            Responsive Design
+                                            Retro
+                                            SEO
+                                            Scrolling
+                                            Single page
+                                            Social Integration
+                                            Sound-Audio
+                                            Storytelling
+                                            Transitions
+                                            Typography
+                                            UI design
+                                            Unusual Navigation
+                                            Vector
+                                            Video
+                                            Web Fonts
+                                            next.js</x:String>
+                    <x:String>360</x:String>
+                    <x:String>3D</x:String>
+                    <x:String>404 pages</x:String>
+                    <x:String>About Page</x:String>
+                    <x:String>Animation</x:String>
+                    <x:String>App Style</x:String>
+                    <x:String>Big Background Images</x:String>
+                    <x:String>Clean</x:String>
+                    <x:String>Colorful</x:String>
+                    <x:String>Contact Page</x:String>
+                    <x:String>Content architecture</x:String>
+                    <x:String>Contentful</x:String>
+                    <x:String>Copy design</x:String>
+                    <x:String>Data Visualization</x:String>
+                    <x:String>Filters and Effects</x:String>
+                    <x:String>Flat Design</x:String>
+                    <x:String>Footer Design</x:String>
+                    <x:String>Forms and Input</x:String>
+                    <x:String>Fullscreen</x:String>
+                    <x:String>Gallery</x:String>
+                    <x:String>Gestures / Interaction</x:String>
+                    <x:String>Graphic design</x:String>
+                    <x:String>Header Design</x:String>
+                    <x:String>Horizontal Layout</x:String>
+                    <x:String>Icons</x:String>
+                    <x:String>Illustration</x:String>
+                    <x:String>Infinite Scroll</x:String>
+                    <x:String>Interaction Design</x:String>
+                    <x:String>Menu - Horizontal</x:String>
+                    <x:String>Menu - Vertical</x:String>
+                    <x:String>Microinteractions</x:String>
+                    <x:String>Minimal</x:String>
+                    <x:String>Navigation Menu</x:String>
+                    <x:String>Parallax</x:String>
+                    <x:String>Photo &amp; Video</x:String>
+                    <x:String>Photographic</x:String>
+                    <x:String>Portfolio</x:String>
+                    <x:String>Project Page</x:String>
+                    <x:String>Responsive</x:String>
+                    <x:String>Responsive Design</x:String>
+                    <x:String>Retro</x:String>
+                    <x:String>SEO</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/social-responsibility" CVScreenId="d8bc1cdb-f78b-4a06-bdc3-f125a2c457a0" ContentHash="EpBi7UIP50qq4siCaY96JA" CvElementArea="364, 352, 106, 58" CvTextArea="395, 371, 28, 19" CvTextArgument="Tag" CvType="Button" DesignTimeRectangle="350, 355, 100, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;nav&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;span' idx='3' parentid='content' tag='SPAN' /&gt;" Guid="131bad89-3019-4fd2-b921-bcfd59a7ffa4" InformativeScreenshot="de2c366e3bc4199b2358d98949ea5fab.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/u7me5IxNJUKZjr5bUAo9jw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Best Social Responsibility Websites | Web Design Inspiration' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NGetText DisplayName="Get Text 'Contact Page'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,143.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/contact-page" CVScreenId="5803339d-af65-43a7-8229-64824315c719" ContentHash="2DIbdPPtL0--INdGRMqvXQ" CvType="AnyWordGroup" DesignTimeRectangle="198, 466, 139, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Contact Page' class='breadcrumb-filters__title' /&gt;" Guid="8360403a-222a-4173-933e-fc1c4ac60394" InformativeScreenshot="b9d7e9d6c038b18ec1668e4c546d67df.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/A7h_jW7bZEmEmGaJzrQbtQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Best Contact Us Page Examples to Inspiration' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">Tag</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <If sap:VirtualizedContainerService.HintSize="452,1016" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">Tag=="Contact Page"</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_4" str_in_actualStep="Tag applied!" str_in_expectedStep="Tag applied" str_in_stepDescription="Select a tag  from the dropdown" str_in_stepName="Apply Tag">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_4" str_in_actualStep="Tag was not applied" str_in_expectedStep="Tag applied" str_in_stepDescription="Select a tag  from the dropdown" str_in_stepName="Apply Tag">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Technology'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/nominees" CVScreenId="c3bd9484-6b54-4d27-8636-14c2028b156b" ContentHash="ISAFvR6c2Umji4Hs9W7lzQ" CvElementArea="473, 351, 161, 58" CvTextArea="503, 371, 84, 19" CvTextArgument="Technology" CvType="Button" DesignTimeRectangle="476, 355, 156, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='4' parentid='content' class='nav-filters__item js-nav-filters-item' parentclass='nav-filters__list' /&gt;" Guid="7c501425-3bb4-44e9-8dcb-22179ee40db0" InformativeScreenshot="039daa4b4f02590c2287dbb3f3ffbdbc.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/xyQzFVQrkkCS63LB0-6RLg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nominees - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"Technology dropdown expanded."</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <uix:NCheckState DisplayName="Check App State 'Technology drop down'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1225.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_5" str_in_actualStep="Techology was successfully selected" str_in_expectedStep="Techology was successfully selected" str_in_stepDescription="Technology drop down expanded" str_in_stepName="Technology selected.">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_5" str_in_actualStep="Technology was not selected." str_in_expectedStep="Techology was successfully selected" str_in_stepDescription="Technology drop down expanded" str_in_stepName="Technology selected.">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/nominees" ContentHash="BZ0VsTn5J0Sx_BtB9imX6g" DesignTimeRectangle="468, 419, 336, 476" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='nav-filters__dropdown' idx='4' parentid='content' tag='DIV' /&gt;" Guid="2a80fd35-f882-409c-8075-dac43aee9303" InformativeScreenshot="2f169f80c99120f1b5c384eb604e5f3c.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/IlPdGCHdH0udiYdfrKU80A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nominees - Awwwards' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
+              <uix:NSelectItem DisplayName="Select Item 'Technology(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,196" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="Firebase" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Angular</x:String>
+                    <x:String>Anime.js</x:String>
+                    <x:String>Astro</x:String>
+                    <x:String>BARBA.js</x:String>
+                    <x:String>Blender</x:String>
+                    <x:String>Bootstrap</x:String>
+                    <x:String>CSS</x:String>
+                    <x:String>Cables</x:String>
+                    <x:String>Canvas API</x:String>
+                    <x:String>Cinema 4D</x:String>
+                    <x:String>Contentful</x:String>
+                    <x:String>Craft CMS</x:String>
+                    <x:String>Curtains.js</x:String>
+                    <x:String>D3</x:String>
+                    <x:String>DatoCMS</x:String>
+                    <x:String>Debian</x:String>
+                    <x:String>Directus</x:String>
+                    <x:String>Docker</x:String>
+                    <x:String>Drupal</x:String>
+                    <x:String>Duda</x:String>
+                    <x:String>Editor X</x:String>
+                    <x:String>Elementor</x:String>
+                    <x:String>Express</x:String>
+                    <x:String>Figma</x:String>
+                    <x:String>Firebase</x:String>
+                    <x:String>Flickity</x:String>
+                    <x:String>Font Awesome</x:String>
+                    <x:String>Framer</x:String>
+                    <x:String>GLSL</x:String>
+                    <x:String>GSAP</x:String>
+                    <x:String>Gatsby</x:String>
+                    <x:String>Go</x:String>
+                    <x:String>Google App Engine</x:String>
+                    <x:String>Google Font API</x:String>
+                    <x:String>GraphQL</x:String>
+                    <x:String>HTML5</x:String>
+                    <x:String>Handlebars</x:String>
+                    <x:String>Highway.js</x:String>
+                    <x:String>Hugo</x:String>
+                    <x:String>Javascript</x:String>
+                    <x:String>Knockout</x:String>
+                    <x:String>Lambda</x:String>
+                    <x:String>Laravel</x:String>
+                    <x:String>Lo-dash</x:String>
+                    <x:String>Locomotive Scroll</x:String>
+                    <x:String>Lottie</x:String>
+                    <x:String>Magento</x:String>
+                    <x:String>Matter.js</x:String>
+                    <x:String>MediaElement.js</x:String>
+                    <x:String>MongoDB</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/nominees" CVScreenId="edc362e8-19a8-4b7b-94ff-9ed3cf42d1f9" ContentHash="N25Y6eSFWE-wjZjhEDRDfw" CvElementArea="473, 351, 161, 58" CvTextArea="503, 371, 84, 19" CvTextArgument="Technology" CvType="Button" DesignTimeRectangle="476, 355, 156, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;nav&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;span' idx='4' parentid='content' tag='SPAN' /&gt;" Guid="0b713042-aa37-450d-9e96-8874633ed9f9" InformativeScreenshot="1fa4ca95218749131f4df3e8b7457fd7.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/E5TADuXUt0KVq9oDetyJMg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nominees - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NGetText DisplayName="Get Text 'Firebase'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,143.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/firebase" CVScreenId="d8b1ba32-5ca8-42bb-b9a7-3cfbf3c176a9" ContentHash="heAwzfSKFEG3Ife8ndsWVg" CvType="AnyWordGroup" DesignTimeRectangle="198, 466, 98, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Firebase' class='breadcrumb-filters__title' innertext='Firebase' /&gt;" Guid="a57d70d1-d19c-4f9a-b579-bb8563deca92" InformativeScreenshot="8d69568603d6a7c2a414e2dff5bd2160.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/Xs1o3cRu9UKh0qbnCFj0Wg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Best Firebase Websites | Web Design Inspiration' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">Technology</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <If sap:VirtualizedContainerService.HintSize="452,1016" sap2010:WorkflowViewState.IdRef="If_3">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">Technology=="Firebase"</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_6" str_in_actualStep="Firebase selected" str_in_expectedStep="Firebase selected" str_in_stepDescription="Required technology selected." str_in_stepName="Firebase">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_6" str_in_actualStep="Firebase not selected" str_in_expectedStep="Firebase selected" str_in_stepDescription="Required technology selected." str_in_stepName="Firebase">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Country'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/firebase" CVScreenId="fe286146-5261-4da7-8fb3-357445c4d1ce" ContentHash="U8ArNlqshk2d-gOpIxtikQ" CvElementArea="635, 351, 138, 58" CvType="Button" DesignTimeRectangle="639, 355, 132, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='5' parentid='content' tag='SPAN' class='nav-filters__item js-nav-filters-item' /&gt;" Guid="ac008ae3-f551-4eaa-a7e8-8e636bb290f3" InformativeScreenshot="47929a7d42d977de8b841b1641a044d4.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/VBXD0m_fd0-FmXl_2-PnsA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Best Firebase Websites | Web Design Inspiration' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">"Country dropdown explanded"</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <uix:NCheckState DisplayName="Check App State Country" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1225.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_7" str_in_actualStep="Country dropdown expanded." str_in_expectedStep="Country dropdown expanded." str_in_stepDescription="Country dropdown expanded and then select India from the drop down" str_in_stepName="Country menu expanded">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_7" str_in_actualStep="Country dropdown not expanded." str_in_expectedStep="Country dropdown expanded." str_in_stepDescription="Country dropdown expanded and then select India from the drop down" str_in_stepName="Country menu expanded">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/firebase" ContentHash="dYibTjRWqUCoxB5ikAS8rQ" DesignTimeRectangle="632, 419, 336, 476" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='nav-filters__dropdown' idx='5' parentid='content' tag='DIV' /&gt;" Guid="7afd2842-aec7-4933-8c82-673489849d6c" InformativeScreenshot="67974a7b1d471c21129cbdb9d903905e.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/L1rIDclnE0awFcXIjUYwuQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Best Firebase Websites | Web Design Inspiration' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
+              <uix:NSelectItem DisplayName="Select Item 'Country(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,196" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="India" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Explore</x:String>
+                    <x:String>Directory</x:String>
+                    <x:String xml:space="preserve">Academy
+									New</x:String>
+                    <x:String>Jobs</x:String>
+                    <x:String>Market</x:String>
+                    <x:String>Awards</x:String>
+                    <x:String>Category</x:String>
+                    <x:String>Tag</x:String>
+                    <x:String>Technology</x:String>
+                    <x:String xml:space="preserve">Country
+    United States
+                                            Italy
+                                            France
+                                            United Kingdom
+                                            Canada
+                                            Ukraine
+                                            Denmark
+                                            Netherlands
+                                            Portugal
+                                            Sweden
+                                            Colombia
+                                            Czech Republic
+                                            Germany
+                                            India
+                                            Poland
+                                            Russia
+                                            Saudi Arabia
+                                            Spain
+                                            Armenia
+                                            Australia
+                                            Finland
+                                            Greece
+                                            Iceland
+                                            Japan
+                                            Malta
+                                            New Zealand
+                                            Slovakia
+                                            Taiwan
+                                            Turkey</x:String>
+                    <x:String>United States</x:String>
+                    <x:String>Italy</x:String>
+                    <x:String>France</x:String>
+                    <x:String>United Kingdom</x:String>
+                    <x:String>Canada</x:String>
+                    <x:String>Ukraine</x:String>
+                    <x:String>Denmark</x:String>
+                    <x:String>Netherlands</x:String>
+                    <x:String>Portugal</x:String>
+                    <x:String>Sweden</x:String>
+                    <x:String>Colombia</x:String>
+                    <x:String>Czech Republic</x:String>
+                    <x:String>Germany</x:String>
+                    <x:String>India</x:String>
+                    <x:String>Poland</x:String>
+                    <x:String>Russia</x:String>
+                    <x:String>Saudi Arabia</x:String>
+                    <x:String>Spain</x:String>
+                    <x:String>Armenia</x:String>
+                    <x:String>Australia</x:String>
+                    <x:String>Finland</x:String>
+                    <x:String>Greece</x:String>
+                    <x:String>Iceland</x:String>
+                    <x:String>Japan</x:String>
+                    <x:String>Malta</x:String>
+                    <x:String>New Zealand</x:String>
+                    <x:String>Slovakia</x:String>
+                    <x:String>Taiwan</x:String>
+                    <x:String>Turkey</x:String>
+                    <x:String>Font</x:String>
+                    <x:String>Color</x:String>
+                    <x:String>1</x:String>
+                    <x:String>Reset filters</x:String>
+                    <x:String>Websites</x:String>
+                    <x:String xml:space="preserve">Yogi Suria
+            HM</x:String>
+                    <x:String>YellowPanther.io</x:String>
+                    <x:String>TheVirtunaut</x:String>
+                    <x:String xml:space="preserve">Slow&amp;Rat
+            HM</x:String>
+                    <x:String>HugoWeb</x:String>
+                    <x:String xml:space="preserve">cthdrl
+                                                                            PRO
+            HM</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/firebase" CVScreenId="20b1b75f-0299-445d-8d10-3d09f984b8ce" ContentHash="O2NC2L3S0k2cLjHcaMXcRw" CvElementArea="635, 351, 139, 58" CvType="Button" DesignTimeRectangle="621, 355, 132, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;nav&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;span' idx='5' parentid='content' tag='SPAN' /&gt;" Guid="dc86a1fb-d9e4-423f-bc7a-edf1fe386adb" InformativeScreenshot="a0051cc13f4a212cbf16865cc7ee440f.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/WBdW4fwQ_EaBpmilBhlK1Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Best Firebase Websites | Web Design Inspiration' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NGetText DisplayName="Get Text 'India websites'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,143.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/India" CVScreenId="652bf874-716f-40eb-8256-c013cb7bc638" ContentHash="tZrlsj8WHkq42umfoV7gCg" CvType="AnyWordGroup" DesignTimeRectangle="79, 466, 144, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='India websites' class='breadcrumb-filters__title' /&gt;" Guid="b324d1af-1d5d-45d3-a7d5-1d5494ea98ca" InformativeScreenshot="2c166b196ed1ed0471de3116df7ed7f1.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/0OIvTmfsqEeJVEPMViVtHA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='India websites - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">Country</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <If sap:VirtualizedContainerService.HintSize="452,1016" sap2010:WorkflowViewState.IdRef="If_4">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">Country=="India websites"</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_8" str_in_actualStep="India selected from the expanded country dropdown" str_in_expectedStep="India selected from the expanded country dropdown" str_in_stepDescription="India selected from the country dropdown" str_in_stepName="India Selected">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_8" str_in_actualStep="India was not selected from the expanded country dropdown" str_in_expectedStep="India selected from the expanded country dropdown" str_in_stepDescription="India selected from the country dropdown" str_in_stepName="India Selected">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Font'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/India" CVScreenId="9210eae3-8646-4595-8e95-8e1ae74a946d" ContentHash="QKr3QnJjeECtMUcBICTPdQ" CvTextArea="804, 371, 34, 15" CvTextArgument="Font" CvType="Text" DesignTimeRectangle="778, 355, 128, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='6' parentid='content' class='nav-filters__item js-nav-filters-item' data-grid-target='filterItem' /&gt;" Guid="1eede6fd-8f97-4b78-9a98-05ce6c743704" InformativeScreenshot="89091213fe9bdf81507ad2d09e34b2c9.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/6yqGpVc300CQnXNK_8fA8Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='India websites - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">"Font dropdown expanded."</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <uix:NCheckState DisplayName="Check App State Font" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1225.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_9" str_in_actualStep="Desired font was selected." str_in_expectedStep="Desired font was selected." str_in_stepDescription="Font dropdown expanded and font selected." str_in_stepName="Font dropdown.">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_9" str_in_actualStep="Desired font was not selected." str_in_expectedStep="Desired font was selected." str_in_stepDescription="Font dropdown expanded and font selected." str_in_stepName="Font dropdown.">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/India" ContentHash="bU6Bgyl_h0C-5hteQtyoNQ" DesignTimeRectangle="771, 419, 336, 476" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='nav-filters__dropdown' idx='6' parentid='content' tag='DIV' /&gt;" Guid="c917f24e-011c-49ab-b2b6-7fa5abbea1aa" InformativeScreenshot="ef2058940e5b6cdaa6fb7e8c52f758be.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/A6dU_A2XgUa5Bzd2ifdwtQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='India websites - Awwwards' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
+              <uix:NSelectItem DisplayName="Select Item 'Font(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,196" sap2010:WorkflowViewState.IdRef="NSelectItem_5" Item="Courier New" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Anton</x:String>
+                    <x:String>Bai Jamjuree</x:String>
+                    <x:String>Baloo 2</x:String>
+                    <x:String>Bricolage Grotesque</x:String>
+                    <x:String>Chakra Petch</x:String>
+                    <x:String>Cinzel</x:String>
+                    <x:String>Domaine</x:String>
+                    <x:String>Druk</x:String>
+                    <x:String>Editorial New</x:String>
+                    <x:String>Flaticon</x:String>
+                    <x:String>Font awesome 6 free solid 900</x:String>
+                    <x:String>Aeonik</x:String>
+                    <x:String>Agrandir</x:String>
+                    <x:String>Aktiv</x:String>
+                    <x:String>Antonio</x:String>
+                    <x:String>Arial</x:String>
+                    <x:String>Arimo</x:String>
+                    <x:String>Averta</x:String>
+                    <x:String>Barlow</x:String>
+                    <x:String>Bebas</x:String>
+                    <x:String>Big Shoulders Display</x:String>
+                    <x:String>Catamaran</x:String>
+                    <x:String>Changa One</x:String>
+                    <x:String>Cormorant</x:String>
+                    <x:String>Courier New</x:String>
+                    <x:String>Crisp Noto Sans</x:String>
+                    <x:String>Domine</x:String>
+                    <x:String>Droid Serif</x:String>
+                    <x:String>EB Garamond</x:String>
+                    <x:String>ETmodules</x:String>
+                    <x:String>Epilogue</x:String>
+                    <x:String>Fira</x:String>
+                    <x:String>Fraunces</x:String>
+                    <x:String>Color</x:String>
+                    <x:String>1</x:String>
+                    <x:String>Reset filters</x:String>
+                    <x:String>Deepsense</x:String>
+                    <x:String xml:space="preserve">Liquidink Design
+                                                                            PRO</x:String>
+                    <x:String xml:space="preserve">Right Hemisphere
+                                                                            PRO</x:String>
+                    <x:String>Mousham Singh</x:String>
+                    <x:String>PROMOTED</x:String>
+                    <x:String>Roshan Sahu</x:String>
+                    <x:String>aditya-bharadwaj</x:String>
+                    <x:String xml:space="preserve">SOTW
+            HM</x:String>
+                    <x:String xml:space="preserve">Artisticodopeo Designz®
+            HM</x:String>
+                    <x:String>SolGuruz</x:String>
+                    <x:String xml:space="preserve">bala vignesh
+            HM</x:String>
+                    <x:String xml:space="preserve">Creative Apes Design (India)
+                                                                            PRO
+            HM</x:String>
+                    <x:String xml:space="preserve">Yogi Suria
+            HM</x:String>
+                    <x:String>Presentable</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/India" CVScreenId="5e74ec51-4b19-4ad0-ac05-1191e47ea92c" ContentHash="tpUUwaBe8EO2RgDl1Fagqw" CvTextArea="804, 371, 34, 15" CvTextArgument="Font" CvType="Text" DesignTimeRectangle="760, 355, 128, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;nav&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;span' idx='6' parentid='content' tag='SPAN' /&gt;" Guid="068c81c1-9dd1-4fc3-9742-ea3f6a706c20" InformativeScreenshot="5f51d3800e9246a94a7d88843c42efb6.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/zocCSU1wa06BKqXAxugHOQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='India websites - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NGetText DisplayName="Get Text 'Websites using Courier …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,143.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/Courier%20New" CVScreenId="329bcde4-d992-44fb-8d75-7d08b5469f99" ContentHash="3e4HekS4GUaFC5Qb128MhA" CvType="AnyWordGroup" DesignTimeRectangle="79, 466, 276, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Websites using Courier New font' class='breadcrumb-filters__title' /&gt;" Guid="8e6392a5-379b-44ac-a95a-24e33baf572c" InformativeScreenshot="d836450bdee4f870efb0ced07e8f72e3.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/sgqJI9F7_Ui6Ts1ev0v2DA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Websites using Courier New font - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">Font</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <If sap:VirtualizedContainerService.HintSize="452,1016" sap2010:WorkflowViewState.IdRef="If_5">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">Font=="Websites using Courier New font"</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_10" str_in_actualStep="Courier New was selected." str_in_expectedStep="Courier new was selected." str_in_stepDescription="Required font - Courier new was selected." str_in_stepName="Courier new was selected.">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_10" str_in_actualStep="Courier New was selected." str_in_expectedStep="Courier new was selected." str_in_stepDescription="Required font - Courier new was selected." str_in_stepName="Courier new was selected.">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Color'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/Courier%20New" ContentHash="gHxbpTrX7UKuNTrmxid9oA" DesignTimeRectangle="913, 355, 142, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='7' parentid='content' tag='SPAN' class='nav-filters__item js-nav-filters-item' /&gt;" Guid="150b5e83-c159-4352-8650-6fc3702dba21" InformativeScreenshot="f80d5b524ae30d162ea6642e20983dbf.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/RgzgVvyYck6JIBb1x2Yr_w" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Websites using Courier New font - Awwwards' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">"Font dropdwon expanded."</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <uix:NCheckState DisplayName="Check App State colors dropdown'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1225.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_11" str_in_actualStep="Color button clicked and colors menu expanded." str_in_expectedStep="Color button clicked and colors menu expanded." str_in_stepDescription="Colors menu expanded." str_in_stepName="Colors menu expanded.">
+                      <ar:passedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_reportId>
+                      <ar:passedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">testID</CSharpValue>
+                        </InArgument>
+                      </ar:passedStep.str_in_testId>
+                    </ar:passedStep>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_11" str_in_actualStep="Color button not clicked and colors menu not expanded." str_in_expectedStep="Color button clicked and colors menu expanded." str_in_stepDescription="Colors menu expanded." str_in_stepName="Colors menu expanded.">
+                      <ar:failedStep.str_in_reportId>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">int_reportID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_reportId>
+                      <ar:failedStep.str_in_testId>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">testID</CSharpValue>
+                        </InArgument>
+                      </ar:failedStep.str_in_testId>
+                    </ar:failedStep>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/Courier%20New" ContentHash="KFOeObUh0kCO2ZrNI0SoBw" DesignTimeRectangle="906, 424, 336, 447" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='nav-filters__dropdown' idx='7' parentid='content' tag='DIV' /&gt;" Guid="c02d460e-d284-43c8-80b3-dfa9d3fee331" InformativeScreenshot="6e2552523360226af5c0c42d2db90f16.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/UFs99q8SgUaLatZsI-oEjA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Websites using Courier New font - Awwwards' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click color tile" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="awwwards.com/websites/%23FBE9A7" ContentHash="9zvoc_OoBkSFwK_huCzYKg" DesignTimeRectangle="916, 434, 105, 47" ElementVisibilityArgument="Interactive" Guid="352b095a-ed11-4520-9ab3-c56f7dc5e7ee" InformativeScreenshot="2f6b0691f00de804d87e5fd8e58e265c.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/mqeW9oncok-t0D6UV2sW-w" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Awwwards Nominees' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.FullSelectorArgument>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15" xml:space="preserve">string.Format("&lt;webctrl aaname='                         ' parentid='content' tag='A' style='background-color: {0}' /&gt;", Color)</CSharpValue>
+                      </InArgument>
+                    </uix:TargetAnchorable.FullSelectorArgument>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">"Color chosen"</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <ar:passedStep sap:VirtualizedContainerService.HintSize="452,378" sap2010:WorkflowViewState.IdRef="passedStep_12" str_in_actualStep="A single color clicked from the drop down" str_in_expectedStep="A single color clicked from the drop down" str_in_stepDescription="Color chosen from the color dropdown" str_in_stepName="Color">
+                <ar:passedStep.str_in_reportId>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">int_reportID</CSharpValue>
+                  </InArgument>
+                </ar:passedStep.str_in_reportId>
+                <ar:passedStep.str_in_testId>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">testID</CSharpValue>
+                  </InArgument>
+                </ar:passedStep.str_in_testId>
+              </ar:passedStep>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.CloseMode>
+          <InArgument x:TypeArguments="uix:NAppCloseMode">
+            <CSharpValue x:TypeArguments="uix:NAppCloseMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">UiPath.UIAutomationNext.Enums.NAppCloseMode.Never</CSharpValue>
+          </InArgument>
+        </uix:NApplicationCard.CloseMode>
+        <uix:NApplicationCard.OCREngine>
+          <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+            <ActivityFunc.Argument>
+              <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+            </ActivityFunc.Argument>
+          </ActivityFunc>
+        </uix:NApplicationCard.OCREngine>
+        <uix:NApplicationCard.OpenMode>
+          <InArgument x:TypeArguments="uix:NAppOpenMode">
+            <CSharpValue x:TypeArguments="uix:NAppOpenMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">UiPath.UIAutomationNext.Enums.NAppOpenMode.Always</CSharpValue>
+          </InArgument>
+        </uix:NApplicationCard.OpenMode>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Edge" IconBase64="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" InformativeScreenshot="f8b8a6765f600051cfcbaf85dd2cc759.jpg" Selector="&lt;html app='msedge.exe' title='Awwwards - Website Awards - Best Web Design Trends' /&gt;" Url="https://www.awwwards.com/" Version="V2">
+            <uix:TargetApp.Arguments>
+              <InArgument x:TypeArguments="x:String" />
+            </uix:TargetApp.Arguments>
+            <uix:TargetApp.WorkingDirectory>
+              <InArgument x:TypeArguments="x:String" />
+            </uix:TargetApp.WorkingDirectory>
+          </uix:TargetApp>
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
