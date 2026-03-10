@@ -426,3 +426,5 @@ FodyWeavers.xsd
 .settings/
 .tmh/
 project.uiproj
+
+TestData/

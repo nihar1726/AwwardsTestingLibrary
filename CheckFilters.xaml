@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="CheckFilers" this:CheckFilers.Color="#B42625" this:CheckFilers.int_reportID="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ar="clr-namespace:atuipath_utilities.Report;assembly=atuipath_utilities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="Category" Type="InArgument(x:String)" />
     <x:Property Name="Color" Type="InArgument(x:String)" />
     <x:Property Name="suiteID" Type="InArgument(x:String)" />
     <x:Property Name="testID" Type="InArgument(x:String)" />
@@ -135,7 +136,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckFilers" sap:VirtualizedContainerService.HintSize="936.6666666666666,19401.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckFilers" sap:VirtualizedContainerService.HintSize="620.6666666666666,19578" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd2:DataTable" Name="dtTable" />
       <Variable x:TypeArguments="x:String" Name="variable1" />
@@ -145,7 +146,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="556.6666666666666,19378.666666666668" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="556.6666666666666,19555.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -163,13 +164,13 @@
           </InArgument>
         </ar:infoStep.str_in_testId>
       </ar:infoStep>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge 27b - Awwwards(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="522.6666666666666,18908.666666666668" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge 27b - Awwwards(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="522.6666666666666,19085.333333333332" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520.6666666666666,18714" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520.6666666666666,18890.666666666668" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="Category" />
                 <Variable x:TypeArguments="x:String" Name="Tag" />
@@ -458,10 +459,15 @@
                   <uix:TargetAnchorable BrowserURL="awwwards.com/websites/nominees" CVScreenId="827a30e2-dd25-4400-9931-b95ded309b67" ContentHash="kngRe-RXuUCO65Wsv-_b-g" CvElementArea="217, 351, 146, 58" CvTextArea="248, 371, 67, 19" CvTextArgument="Category" CvType="Button" DesignTimeRectangle="221, 355, 140, 50" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;nav&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;span' idx='2' parentid='content' tag='SPAN' /&gt;" Guid="984fd453-0830-4732-bb14-ed9ed9606cd7" InformativeScreenshot="009adc57be761ba87a3f9204c0d298ca.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/2Xo0q0RH6UOnSd4ZaDwrYQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nominees - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,248" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Category'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.6666666666667,248" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="0f0f46ec-80db-40a3-b6a9-a25407f4d674" Version="V5">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="awwwards.com/websites/nominees" CVScreenId="d9185de8-657f-43e7-bf11-76dfcdeb73f7" ContentHash="b56KWiKs6EC6sRvgKdjn8A" CvTextArea="299, 470, 85, 21" CvTextArgument="Search ..." CvType="Text" DesignTimeRectangle="257, 449, 396, 63" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='content' tag='INPUT' /&gt;" Guid="04c0e59c-125a-428e-ba61-57368af38c6c" InformativeScreenshot="5c68febb5cfa5b4970b987464614a572.jpg" Reference="MzCypEtLsU-oo9Aa1B7h8w/uTPNYCzvMEGcLg5Wxy3c2A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nominees - Awwwards' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NTypeInto.Target>
+                <uix:NTypeInto.Text>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_78">Category</CSharpValue>
+                  </InArgument>
+                </uix:NTypeInto.Text>
                 <uix:NTypeInto.VerifyOptions>
                   <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
                     <uix:VerifyExecutionTypeIntoOptions.Retry>
