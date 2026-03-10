@@ -129,7 +129,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CountryFilter" sap:VirtualizedContainerService.HintSize="904,3195" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CountryFilter" sap:VirtualizedContainerService.HintSize="904,4251" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="datatable" />
     </Sequence.Variables>
@@ -169,19 +169,19 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Jobs for Web Designers and Developers" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2359" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="41e07082-664b-4beb-9db8-0cbce45844a8" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Jobs for Web Designers and Developers" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,3415" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="41e07082-664b-4beb-9db8-0cbce45844a8" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2137" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2145" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Country'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,2077" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="41e07082-664b-4beb-9db8-0cbce45844a8" Version="V5">
+            <uix:NCheckState DisplayName="Check App State 'Country'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,2081" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="41e07082-664b-4beb-9db8-0cbce45844a8" Version="V5">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1269" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -293,7 +293,7 @@
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.OpenMode>
         <InArgument x:TypeArguments="uix:NAppOpenMode">
-          <CSharpValue x:TypeArguments="uix:NAppOpenMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen</CSharpValue>
+          <CSharpValue x:TypeArguments="uix:NAppOpenMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">UiPath.UIAutomationNext.Enums.NAppOpenMode.Never</CSharpValue>
         </InArgument>
       </uix:NApplicationCard.OpenMode>
       <uix:NApplicationCard.TargetApp>
