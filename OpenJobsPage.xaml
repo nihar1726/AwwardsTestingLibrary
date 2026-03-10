@@ -137,7 +137,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OpenJobsPage" sap:VirtualizedContainerService.HintSize="904,2990" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="OpenJobsPage" sap:VirtualizedContainerService.HintSize="904,4038" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="datatable" />
     </Sequence.Variables>
@@ -187,7 +187,7 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Awwwards - Website Awards - Best Web Des" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2154" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2b5ece98-eb6f-4099-88c4-ca157e46a7a6" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Awwwards - Website Awards - Best Web Des" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,3202" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2b5ece98-eb6f-4099-88c4-ca157e46a7a6" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
