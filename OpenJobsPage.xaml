@@ -1,8 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="OpenJobsPage" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ar="clr-namespace:atuipath_utilities.Report;assembly=atuipath_utilities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="OpenJobsPage" this:OpenJobsPage.click="Market" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ar="clr-namespace:atuipath_utilities.Report;assembly=atuipath_utilities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="testid" Type="InArgument(x:String)" />
     <x:Property Name="int_reportid" Type="InArgument(x:Int32)" />
-    <x:Property Name="click" Type="OutArgument(x:String)" />
+    <x:Property Name="click" Type="InArgument(x:String)" />
     <x:Property Name="suiteid" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
@@ -137,16 +137,13 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OpenJobsPage" sap:VirtualizedContainerService.HintSize="904,4038" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="datatable" />
-    </Sequence.Variables>
+  <Sequence DisplayName="OpenJobsPage" sap:VirtualizedContainerService.HintSize="920.6666666666666,2463.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ar:infoStep str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="488,383" sap2010:WorkflowViewState.IdRef="infoStep_3" str_in_stepName="Open required page">
+    <ar:infoStep str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="488,387.3333333333333" sap2010:WorkflowViewState.IdRef="infoStep_3" str_in_stepName="Open required page">
       <ar:infoStep.str_in_actualStep>
         <InArgument x:TypeArguments="x:String">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">"Opened "+click+" page."</CSharpValue>
@@ -168,38 +165,19 @@
         </InArgument>
       </ar:infoStep.str_in_testId>
     </ar:infoStep>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="488,255" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="aradhika" WorkbookPath="TestData\Group07_DataFetching.xlsx">
-      <ui:ReadRange.DataTable>
-        <OutArgument x:TypeArguments="sd:DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">datatable</CSharpReference>
-        </OutArgument>
-      </ui:ReadRange.DataTable>
-    </ui:ReadRange>
-    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_3">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">click</CSharpReference>
-        </OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">datatable.Rows[0]["click"].ToString()</CSharpValue>
-        </InArgument>
-      </Assign.Value>
-    </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Awwwards - Website Awards - Best Web Des" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,3202" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2b5ece98-eb6f-4099-88c4-ca157e46a7a6" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Awwwards - Website Awards - Best Web Des" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2053.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2b5ece98-eb6f-4099-88c4-ca157e46a7a6" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1932" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1858.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Jobs'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,226" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2b5ece98-eb6f-4099-88c4-ca157e46a7a6" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Jobs'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2b5ece98-eb6f-4099-88c4-ca157e46a7a6" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="awwwards.com/jobs" CVScreenId="6bf2ce54-ed02-483e-95a9-944d7873d764" ContentHash="nxjipof6d0CFe2PXdNTclg" DesignTimeRectangle="427, 146, 50, 54" ElementType="ListItem" ElementVisibilityArgument="Interactive" Guid="75330635-2c7f-43a1-af07-c1ad8d3a47d2" InformativeScreenshot="02b99f174a7f10f12e68bf5fa33126bb.jpg" Reference="qfKJRLB6zEyhS-6lWyw-Hw/JPAp4uQceU2k7lvnjRcDmg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Jobs for Web Designers and Developers' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.FullSelectorArgument>
@@ -210,9 +188,21 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State 'The Jobs board'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1642" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="2b5ece98-eb6f-4099-88c4-ca157e46a7a6" Version="V5">
+            <ar:passedStep str_in_actualStep="{x:Null}" str_in_expectedStep="{x:Null}" str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="452,387.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_stepName="Clicked required page">
+              <ar:passedStep.str_in_reportId>
+                <InArgument x:TypeArguments="x:Int32">
+                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">int_reportid</CSharpValue>
+                </InArgument>
+              </ar:passedStep.str_in_reportId>
+              <ar:passedStep.str_in_testId>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">testid</CSharpValue>
+                </InArgument>
+              </ar:passedStep.str_in_testId>
+            </ar:passedStep>
+            <uix:NCheckState DisplayName="Check App State 'The Jobs board'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1216" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="2b5ece98-eb6f-4099-88c4-ca157e46a7a6" Version="V5">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,442" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -243,7 +233,7 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,442" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -286,9 +276,9 @@
         </InArgument>
       </uix:NApplicationCard.CloseMode>
       <uix:NApplicationCard.OCREngine>
-        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
           <ActivityFunc.Argument>
-            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
           </ActivityFunc.Argument>
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>

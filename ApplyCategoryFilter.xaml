@@ -1,9 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ApplyCategoryFilter" this:ApplyCategoryFilter.int_reportid="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ar="clr-namespace:atuipath_utilities.Report;assembly=atuipath_utilities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ApplyCategoryFilter" this:ApplyCategoryFilter.int_reportid="0" this:ApplyCategoryFilter.category="Programming" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ar="clr-namespace:atuipath_utilities.Report;assembly=atuipath_utilities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="suiteid" Type="InArgument(x:String)" />
     <x:Property Name="testid" Type="InArgument(x:String)" />
     <x:Property Name="int_reportid" Type="InArgument(x:Int32)" />
-    <x:Property Name="category" Type="OutArgument(x:String)" />
+    <x:Property Name="category" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
@@ -132,16 +132,13 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ApplyCategoryFilter" sap:VirtualizedContainerService.HintSize="904,4509" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="datatable" />
-    </Sequence.Variables>
+  <Sequence DisplayName="ApplyCategoryFilter" sap:VirtualizedContainerService.HintSize="620.6666666666666,2887.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ar:infoStep str_in_actualStep="{x:Null}" str_in_expectedStep="{x:Null}" str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="488,383" sap2010:WorkflowViewState.IdRef="infoStep_1" str_in_stepName="Applying category filter">
+    <ar:infoStep str_in_actualStep="{x:Null}" str_in_expectedStep="{x:Null}" str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="488,387.3333333333333" sap2010:WorkflowViewState.IdRef="infoStep_1" str_in_stepName="Applying category filter">
       <ar:infoStep.str_in_reportId>
         <InArgument x:TypeArguments="x:Int32">
           <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">int_reportid</CSharpValue>
@@ -153,51 +150,32 @@
         </InArgument>
       </ar:infoStep.str_in_testId>
     </ar:infoStep>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="488,255" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="aradhika" WorkbookPath="TestData\Group07_DataFetching.xlsx">
-      <ui:ReadRange.DataTable>
-        <OutArgument x:TypeArguments="sd:DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">datatable</CSharpReference>
-        </OutArgument>
-      </ui:ReadRange.DataTable>
-    </ui:ReadRange>
-    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">category</CSharpReference>
-        </OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">datatable.Rows[0]["category"].ToString()</CSharpValue>
-        </InArgument>
-      </Assign.Value>
-    </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Jobs for Web Designers and Developers" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,3673" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Jobs for Web Designers and Developers" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2477.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2403" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2282.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Category'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,2339" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V5">
+            <uix:NCheckState DisplayName="Check App State 'Category'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,2222.6666666666665" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V5">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1535" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1444.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Category'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Category'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="awwwards.com/jobs" CVScreenId="15ddfa23-4ac6-417b-9f6c-ffbac83d0b4c" ContentHash="L5GC_QgKm0OUtDBBgOkU9A" DesignTimeRectangle="94, 269, 55, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Category' parentid='content' tag='SPAN' /&gt;" Guid="03cd7bcc-7f57-49fd-9cd9-ca6ae9a2f389" InformativeScreenshot="49cdf5c86b40d35569e7697d3486194a.jpg" Reference="qfKJRLB6zEyhS-6lWyw-Hw/oaAPP-r7nkaT-Xl3rtLwTw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Jobs for Web Designers and Developers' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ar:passedStep str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="416,387" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_actualStep="Clicked category" str_in_expectedStep="Click category" str_in_stepName="Clicked category filter">
+                  <ar:passedStep str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="416,387.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_actualStep="Clicked category" str_in_expectedStep="Click category" str_in_stepName="Clicked category filter">
                     <ar:passedStep.str_in_reportId>
                       <InArgument x:TypeArguments="x:Int32">
                         <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">int_reportid</CSharpValue>
@@ -209,7 +187,7 @@
                       </InArgument>
                     </ar:passedStep.str_in_testId>
                   </ar:passedStep>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Choose category" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Choose category" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,195.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="awwwards.com/jobs" ContentHash="qgX9P8SF2Umvjnk5L_steg" DesignTimeRectangle="102, 284, 41, 28" ElementType="Text" ElementVisibilityArgument="Interactive" Guid="cb32e267-c49a-479a-83e9-235c603dd3da" InformativeScreenshot="69bee610654feab5e65f0fb013881f8a.jpg" Reference="qfKJRLB6zEyhS-6lWyw-Hw/lavaSZL8-0e08R0KjiIChQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Jobs for Web Designers and Developers' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
                         <uix:TargetAnchorable.FullSelectorArgument>
@@ -220,7 +198,7 @@
                       </uix:TargetAnchorable>
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ar:passedStep str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="416,383" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_stepName="Category filter">
+                  <ar:passedStep str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="416,387.3333333333333" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_stepName="Category filter">
                     <ar:passedStep.str_in_actualStep>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"Choosed the "+category+" category."</CSharpValue>
@@ -242,17 +220,17 @@
                       </InArgument>
                     </ar:passedStep.str_in_testId>
                   </ar:passedStep>
-                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,249" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="3" ScopeIdentifier="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V5" />
+                  <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,219.33333333333334" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="3" ScopeIdentifier="cd78232a-531a-4ec2-a4a7-d0d1d83099de" Version="V5" />
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,434" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,438" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ar:failedStep str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_stepName="category filter">
+                  <ar:failedStep str_in_stepDescription="{x:Null}" sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_stepName="category filter">
                     <ar:failedStep.str_in_actualStep>
                       <InArgument x:TypeArguments="x:String">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Failed to chose the "+category+" category."</CSharpValue>
@@ -289,9 +267,9 @@
         </InArgument>
       </uix:NApplicationCard.CloseMode>
       <uix:NApplicationCard.OCREngine>
-        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
           <ActivityFunc.Argument>
-            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
           </ActivityFunc.Argument>
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
