@@ -1,25 +1,13 @@
 {
-  "DisplayName": "login",
+  "DisplayName": "Academy",
   "Tooltip": null,
   "HelpLink": null,
   "Color": null,
   "OriginalIconFileName": null,
   "Arguments": [
     {
-      "Name": "username",
-      "DisplayName": "username",
-      "Category": null,
-      "Tooltip": null,
-      "Placeholder": null,
-      "Widget": null,
-      "IsRequired": false,
-      "IsPrincipal": true,
-      "ArgumentType": 0,
-      "DataSourceItems": null
-    },
-    {
-      "Name": "password",
-      "DisplayName": "password",
+      "Name": "suiteid",
+      "DisplayName": "suiteid",
       "Category": null,
       "Tooltip": null,
       "Placeholder": null,
@@ -42,11 +30,11 @@
       "DataSourceItems": null
     },
     {
-      "Name": "suiteid",
-      "DisplayName": "suiteid",
+      "Name": "reportid",
+      "DisplayName": "reportid",
       "Category": null,
       "Tooltip": null,
-      "Placeholder": null,
+      "Placeholder": "0",
       "Widget": null,
       "IsRequired": false,
       "IsPrincipal": true,
@@ -54,11 +42,11 @@
       "DataSourceItems": null
     },
     {
-      "Name": "reportid",
-      "DisplayName": "reportid",
+      "Name": "course",
+      "DisplayName": "course",
       "Category": null,
       "Tooltip": null,
-      "Placeholder": null,
+      "Placeholder": "Learn UI Design with Figma from Scratch",
       "Widget": null,
       "IsRequired": false,
       "IsPrincipal": true,

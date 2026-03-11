@@ -6,8 +6,8 @@
   "OriginalIconFileName": null,
   "Arguments": [
     {
-      "Name": "Search1",
-      "DisplayName": "Search1",
+      "Name": "search",
+      "DisplayName": "search",
       "Category": null,
       "Tooltip": null,
       "Placeholder": null,
@@ -46,7 +46,7 @@
       "DisplayName": "reportid",
       "Category": null,
       "Tooltip": null,
-      "Placeholder": null,
+      "Placeholder": "0",
       "Widget": null,
       "IsRequired": false,
       "IsPrincipal": true,
