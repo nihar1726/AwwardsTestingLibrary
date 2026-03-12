@@ -1,0 +1,153 @@
+{
+  "DisplayName": "PostJob",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "suiteid",
+      "DisplayName": "suiteid",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "testid",
+      "DisplayName": "testid",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "reportid",
+      "DisplayName": "reportid",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "0",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Title",
+      "DisplayName": "Title",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Junior Software Tester – QA Intern",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "description",
+      "DisplayName": "description",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "We are looking for a Junior Software Tester to join our QA team. The candidate will be responsible for executing test cases, identifying bugs, and reporting issues to the development team. Basic knowledge of software testing concepts, mobile testing, and automation tools is preferred. This role is ideal for fresh graduates or interns who want to start a career in software testing.",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Category",
+      "DisplayName": "Category",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Design",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Type",
+      "DisplayName": "Type",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Full-time",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "CompanyName",
+      "DisplayName": "CompanyName",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "TechNova Solutions Pvt Ltd",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "CompanyWeb",
+      "DisplayName": "CompanyWeb",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "https://www.technovasolutions.com",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "email",
+      "DisplayName": "email",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "careers@technovasolutions.com",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "location",
+      "DisplayName": "location",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Sahibzada Ajit Singh Nagar, Punjab, India",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "logo",
+      "DisplayName": "logo",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "logo",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

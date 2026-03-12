@@ -1,0 +1,502 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="PostJob" this:PostJob.reportid="0" this:PostJob.Title="Junior Software Tester – QA Intern" this:PostJob.description="We are looking for a Junior Software Tester to join our QA team. The candidate will be responsible for executing test cases, identifying bugs, and reporting issues to the development team. Basic knowledge of software testing concepts, mobile testing, and automation tools is preferred. This role is ideal for fresh graduates or interns who want to start a career in software testing." this:PostJob.Category="Design" this:PostJob.Type="Full-time" this:PostJob.CompanyName="TechNova Solutions Pvt Ltd" this:PostJob.CompanyWeb="https://www.technovasolutions.com" this:PostJob.email="careers@technovasolutions.com" this:PostJob.location="Sahibzada Ajit Singh Nagar, Punjab, India" this:PostJob.logo="logo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ar="clr-namespace:atuipath_utilities.Report;assembly=atuipath_utilities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="suiteid" Type="InArgument(x:String)" />
+    <x:Property Name="testid" Type="InArgument(x:String)" />
+    <x:Property Name="reportid" Type="InArgument(x:Int32)" />
+    <x:Property Name="Title" Type="InArgument(x:String)" />
+    <x:Property Name="description" Type="InArgument(x:String)" />
+    <x:Property Name="Category" Type="InArgument(x:String)" />
+    <x:Property Name="Type" Type="InArgument(x:String)" />
+    <x:Property Name="CompanyName" Type="InArgument(x:String)" />
+    <x:Property Name="CompanyWeb" Type="InArgument(x:String)" />
+    <x:Property Name="email" Type="InArgument(x:String)" />
+    <x:Property Name="location" Type="InArgument(x:String)" />
+    <x:Property Name="logo" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>atuipath_utilities.Report</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Jira.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>atuipath_utilities</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>System.Text.Json</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="PostJob" sap:VirtualizedContainerService.HintSize="868,6536" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ar:infoStep str_in_actualStep="{x:Null}" str_in_expectedStep="{x:Null}" sap:VirtualizedContainerService.HintSize="524,383" sap2010:WorkflowViewState.IdRef="infoStep_1" str_in_stepDescription="User is posting a job " str_in_stepName="Job Post Page">
+      <ar:infoStep.str_in_reportId>
+        <InArgument x:TypeArguments="x:Int32">
+          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">reportid</CSharpValue>
+        </InArgument>
+      </ar:infoStep.str_in_reportId>
+      <ar:infoStep.str_in_testId>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">testid</CSharpValue>
+        </InArgument>
+      </ar:infoStep.str_in_testId>
+    </ar:infoStep>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Settings - Cynthia_Clawhauser(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="524,6130" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="b7a35616-2ae0-435e-9b86-848628fca169" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,5936" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Post Job'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,198" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="awwwards.com/settings/jobs" CVScreenId="dd8ef1a7-d19b-4383-b239-cc84c66dd6b0" ContentHash="iZzbAhP_JUqkCkMNiAW0Gg" DesignTimeRectangle="64, 515, 295, 72" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='                                 Post Job                             ' parentid='content' tag='A' /&gt;" Guid="58eaad0b-f19d-422b-9ee4-13ee638da257" InformativeScreenshot="476d3ddc758e9663012fd1d9705d77fa.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/C51W_tDS3EeYHlDDgU9xOw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Settings - Cynthia_Clawhauser' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'Job information'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="488,5674" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="486,4886" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ar:passedStep sap:VirtualizedContainerService.HintSize="452,387" sap2010:WorkflowViewState.IdRef="passedStep_1" str_in_actualStep="Job Post Page appears" str_in_expectedStep="Job Post Page appears" str_in_stepDescription="User is posting a job " str_in_stepName="Job Post Page">
+                    <ar:passedStep.str_in_reportId>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">reportid</CSharpValue>
+                      </InArgument>
+                    </ar:passedStep.str_in_reportId>
+                    <ar:passedStep.str_in_testId>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">testid</CSharpValue>
+                      </InArgument>
+                    </ar:passedStep.str_in_testId>
+                  </ar:passedStep>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Title'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="DebuggerApi" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="42de826b-82fd-49a7-ab98-ac12d2656d67" ContentHash="UA57_Z2WlUGvpVuOGlVPow" DesignTimeRectangle="433, 448, 730, 48" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='submission_job_form_title' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='text-input' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Title' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="63a70103-9420-4897-a632-6577e011f75a" InformativeScreenshot="80c6d3d58bad6259c71d4dac94022666.jpg" IsResponsive="True" Reference="Zot02iPf2k-vkbb_Ct6kQw/2F9AxVdwIUumg5XZwIZVwA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="42de826b-82fd-49a7-ab98-ac12d2656d67" DesignTimeRectangle="433, 428, 730, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='is-required form-field__label required' aaname='Title' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='TITLE' /&gt;" Guid="c13e496c-ed41-4a33-93ce-1c7bf6c9adc6" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">Title</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Description'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,250" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="DebuggerApi" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="2458b274-ad65-4fad-98a7-c40339781bc7" ContentHash="PfYE84_kIUmM2rVFBTlBxA" DesignTimeRectangle="434, 511, 728, 48" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='content' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' parentname='submission_job_form' matching:parentname='fuzzy' fuzzylevel:parentname='0.0' tag='DIV' class='ql-editor ql-blank' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="c4113a97-1bd1-4855-96e9-a3db8815a69b" InformativeScreenshot="772570aa9b776ad7cc5b55ceedda0af2.jpg" IsResponsive="True" Reference="Zot02iPf2k-vkbb_Ct6kQw/UJ857jCWSEOJIwC3ZDWWZA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="2458b274-ad65-4fad-98a7-c40339781bc7" DesignTimeRectangle="433, 445, 730, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Description' tag='LABEL' type='' class='is-required form-field__label required' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='DESCRIPTION' /&gt;" Guid="573633cc-1526-4e5e-8042-76286524c198" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">description</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select category'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,198" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="7a248b71-8738-489f-969b-ddcf46e9572b" ContentHash="aIbuQl-gyE6-9jQk85F4tg" DesignTimeRectangle="449, 386, 714, 48" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Select category' parentid='content' parentname='submission_job_form' tag='DIV' type='' class='choices__item choices__placeholder choices__item--selectable' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:parentname='fuzzy' fuzzylevel:parentname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Select category' /&gt;" Guid="676ba980-73d5-4120-a514-a68faf7ff98e" InformativeScreenshot="fcc8032cf39bb4a1fbb55ef648ec6f8b.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/09R8recSiE6w7fXvMtdPxA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="7a248b71-8738-489f-969b-ddcf46e9572b" DesignTimeRectangle="433, 366, 730, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Category' tag='LABEL' type='' class='is-required form-field__label required' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='CATEGORY' /&gt;" Guid="8f4eb883-ac28-493f-bc9a-873c726c2118" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Design'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,198" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="8ea6f736-8a1f-456e-a19f-58db7bf1b1ac" ContentHash="Z2H7yJBQlkKM6h6O0oc3QA" DesignTimeRectangle="12, 138, 0, 0" ElementType="Text" ElementVisibilityArgument="Interactive" Guid="c73f089a-51b4-426b-add5-d6a5ce368312" InformativeScreenshot="d414ca5e341a5da3fae7d99dacde3a2e.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/aa3ZOSuUZEmct0FsXoJ_bQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.FullSelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">string.Format("&lt;webctrl id='choices--submission_job_form_category-item-choice-2' tag='DIV' aaname='{0}' /&gt;", Category)</CSharpValue>
+                          </InArgument>
+                        </uix:TargetAnchorable.FullSelectorArgument>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select Type...'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,198" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="139f9343-d5a7-40af-84d3-9975bea42b4d" ContentHash="pyihKMWfr0yEelQRfaOe-A" DesignTimeRectangle="449, 485, 714, 48" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Select Type...' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentid='content' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' parentname='submission_job_form' matching:parentname='fuzzy' fuzzylevel:parentname='0.0' tag='DIV' type='' class='choices__item choices__placeholder choices__item--selectable' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Select Type...' /&gt;" Guid="3d4367a0-4e4f-432a-b6d7-e62af3aae2ff" InformativeScreenshot="0eaeb16abe238deea08d55b99c3ff450.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/ox-y8A2040CHR3W2apoxtg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="139f9343-d5a7-40af-84d3-9975bea42b4d" DesignTimeRectangle="433, 465, 730, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Type' tag='LABEL' type='' class='is-required form-field__label required' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='TYPE' /&gt;" Guid="f97155c1-613c-47fa-bb7f-a8acc32a0c30" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Full-time'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,198" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="b08e5ef8-9e6f-4cef-a926-8348e305e89e" ContentHash="XoRYZkzUAU6tRvYm32aE3w" DesignTimeRectangle="12, 138, 0, 0" ElementType="Text" ElementVisibilityArgument="Interactive" Guid="45280617-9150-48ec-8e54-69b723ac3d80" InformativeScreenshot="d414ca5e341a5da3fae7d99dacde3a2e.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/RJUjgnYB50OxopeGAWGBIg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.FullSelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">string.Format("&lt;webctrl id='choices--submission_job_form_type-item-choice-2' tag='DIV' aaname='{0}' /&gt;", Type)</CSharpValue>
+                          </InArgument>
+                        </uix:TargetAnchorable.FullSelectorArgument>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Company name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,250" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="17040bc1-1df2-4a14-8a60-63fa92f7651a" ContentHash="C7eBzpjTekWescU6tdH39g" DesignTimeRectangle="433, 404, 730, 48" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='submission_job_form_companyName' tag='INPUT' type='text' class='text-input' aaname='Company name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="15fa2f59-1c08-4ca2-a4d6-008cd43d65af" InformativeScreenshot="ad2c912db5df30667ac08fe869de5397.jpg" IsResponsive="True" Reference="Zot02iPf2k-vkbb_Ct6kQw/SFgyOTf2h0qnPBlNe1LQGQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="17040bc1-1df2-4a14-8a60-63fa92f7651a" DesignTimeRectangle="433, 384, 730, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Company name' tag='LABEL' type='' class='is-required form-field__label required' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='COMPANY NAME' /&gt;" Guid="eedf7b8a-d6c7-4cb6-994c-65892936960f" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">CompanyName</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Company website'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,250" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="DebuggerApi" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="17040bc1-1df2-4a14-8a60-63fa92f7651a" ContentHash="T5Gg2Rum7EuZbSl5-WVBJQ" DesignTimeRectangle="433, 502, 730, 48" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='submission_job_form_companyWebsite' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='text-input' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Company website' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="4752fa12-7b0f-4e6b-93ef-8b9e503db51a" InformativeScreenshot="c0aa61968db779c43d6b831d78dac41a.jpg" IsResponsive="True" Reference="Zot02iPf2k-vkbb_Ct6kQw/FtkXMH67lUmq7-aZs_feuA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="17040bc1-1df2-4a14-8a60-63fa92f7651a" DesignTimeRectangle="433, 482, 730, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Company website' tag='LABEL' type='' class='is-required form-field__label required' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='COMPANY WEBSITE' /&gt;" Guid="6b71197c-4c8e-40e0-80bc-03184fc260db" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">CompanyWeb</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'INPUT submission_job_fo…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,198" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" ContentHash="M0jT0nCK_E-plv_6Q3kt1w" DesignTimeRectangle="434, 486, 198, 198" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='submission_job_form_companyLogo' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='file' class='input-file inputfile input-drag__input' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Logo' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b0325a4c-68a6-4c19-b530-0f8f140e3c53" InformativeScreenshot="228e2436bfcddfcbc8303fed4b59ae4f.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/CqhR_5U2hE6_Zev8v2dkKg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="None" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,517" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="69654f43-f3a2-4f6a-8c77-624347302d7c" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,362" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'logo'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,298" sap2010:WorkflowViewState.IdRef="NTypeInto_10" InteractionMode="SameAsCard" ScopeIdentifier="69654f43-f3a2-4f6a-8c77-624347302d7c" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable CVScreenId="b9349391-0b86-4ef0-a532-6b0108e9f3f1" ContentHash="Nv0pXBpxgkyGRiswoIpmKQ" DesignTimeRectangle="201, 405, 354, 15" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;wnd ctrlid='1148' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' /&gt;&lt;wnd ctrlid='1148' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' /&gt;&lt;wnd ctrlid='1148' matching:ctrlid='fuzzy' fuzzylevel:ctrlid='0.0' aaname='File name:' /&gt;" Guid="86c878d8-94f8-4777-a2d4-40130fab0ddd" InformativeScreenshot="7032d224b69865debc681b1e29070b68.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/B2NTDnwgokW057YNYR1sLg" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Open' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="None" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.Text>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">logo+"[k(enter)]"</CSharpValue>
+                              </InArgument>
+                            </uix:NTypeInto.Text>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.CloseMode>
+                      <InArgument x:TypeArguments="uix:NAppCloseMode">
+                        <CSharpValue x:TypeArguments="uix:NAppCloseMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">UiPath.UIAutomationNext.Enums.NAppCloseMode.Never</CSharpValue>
+                      </InArgument>
+                    </uix:NApplicationCard.CloseMode>
+                    <uix:NApplicationCard.OCREngine>
+                      <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                        <ActivityFunc.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                        </ActivityFunc.Argument>
+                      </ActivityFunc>
+                    </uix:NApplicationCard.OCREngine>
+                    <uix:NApplicationCard.OpenMode>
+                      <InArgument x:TypeArguments="uix:NAppOpenMode">
+                        <CSharpValue x:TypeArguments="uix:NAppOpenMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">UiPath.UIAutomationNext.Enums.NAppOpenMode.Never</CSharpValue>
+                      </InArgument>
+                    </uix:NApplicationCard.OpenMode>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="410, 79, 800, 480" ContentHash="LNa8FFBqzEW82IiBlKKZhg" FilePath="C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMZSURBVDhPXdJrSJNRGAfw11S87WZSCFES9KmLbXM1s4FS2c25LTXtwoqym4EVRLFRlmFqkvOydNZ6/RAVohUSREHlbs7Ne22+27JNrSgNixZZy4j2j71TS//wfDvP75znnEMQc7LG8I0UmD55k0wfwLe4ILA6sK63H6k2k2+T47FB7G5OmNtDR6CbFAn0P3wCw1fwjB/Aax9GotkJrsUOruUFUvrakWZ/CrH7jj/3nYac1ZykmxTxdRN+vt4LnuEjVhvfYpXJTQOrzEFgbbcFm533sG2wGfLRKzg0fvYfwmvz+fi6CXD1n8E1jCHR+AYrjC4sN9mx3GQDz9qD5F4dNlItyHRrsW/0Ag6PF6LQe0BEcJ//JLltE1hCuhBX3oX5FS+x4KoN8VVWLG3qo4FA8a1GiPoeYQulhcxdiaOfClD4ZY+HWNk6/odT0gFmmQPsSjdiq4cQpx7GQs0I4huGsKi+iwa4Zj3W97Rgu6MK2Z5iyN8ew+HRXSAWkyOIumhDTPkgmBVusCs9QaS0HwlV9lvxDR7jsvudEFrvIq2nFtsHyiGlTkL+5iCOvBeDCOwaUexE1OVXiC4bBKPiNVhnDIjJuGqdviPhw46hZHMDUrtUSO8vpYE8507sHxKDCCtyIPyiCxGXXIgMICVOxMiugZl1/fTMK+lvkkKjGiKLClu7j0Jqy8duVxbkrjQvMe+cA2FFzhkk6sQzMGR1YGbfMP0DtGNC/RWsNxVjQ/sRyPpkyLWl+/dSKXlEiNLhDSChU0h0/gMwdmjAyGrwM3c25gWAtbpSkVBf1ppqLBhLb8/zijszW3P600RBXkGRIUoHaOS8ExEFT4JA4BQ5pJ+VrZ3966YSm6Gi8WAUlC9ESdFI+CkzGLJ6GghArGwtWFnXf7NlGg9bWmfgSGq9HHH179gMle9/QEQoKP80Ei1vCgJSNVg76gMA2DIN2NI6cCS14Iir/bEZqqkRZiP0SUIVdkTLm4NjZNaAKakBW6Kmi5NZ4+OIq+c0/x8FRYYpB76HKgcQfrYXkcefISb/AebLb/9iS9SNc5f/BVJE84OjTSkMAAAAAElFTkSuQmCC" InformativeScreenshot="a02a192211b3ace972120c7f8d9b690d.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/No2upx_RB0eL0TOdZYwMrA" Selector="&lt;wnd app='msedge.exe' cls='#32770' title='Open' /&gt;" Version="V2">
+                        <uix:TargetApp.Arguments>
+                          <InArgument x:TypeArguments="x:String" />
+                        </uix:TargetApp.Arguments>
+                        <uix:TargetApp.Url>
+                          <InArgument x:TypeArguments="x:String" />
+                        </uix:TargetApp.Url>
+                        <uix:TargetApp.WorkingDirectory>
+                          <InArgument x:TypeArguments="x:String" />
+                        </uix:TargetApp.WorkingDirectory>
+                      </uix:TargetApp>
+                    </uix:NApplicationCard.TargetApp>
+                  </uix:NApplicationCard>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'By e-mail'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,250" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="SameAsCard" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="6251998c-264b-4bf7-86de-2089912b1e71" ContentHash="KlQrm5btgEqmDGK0PTN7iA" DesignTimeRectangle="433, 460, 355, 48" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl name='submission_job_form[howToApplyUrlOrEmail][email_value]' tag='INPUT' type='text' class='text-input' placeholder='E-mail' aaname='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="3fb09a6a-e67b-4536-ac0b-c83a0e4cd54c" InformativeScreenshot="9595fa4e43d423d60d95a50058ff9411.jpg" IsResponsive="True" Reference="Zot02iPf2k-vkbb_Ct6kQw/43SQr1q3I0y8MJEL2yYefA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="6251998c-264b-4bf7-86de-2089912b1e71" DesignTimeRectangle="458, 437, 57, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='By e-mail' parentid='content' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='By e-mail' /&gt;" Guid="c1003e2a-5de4-427e-a8c0-9f69cd804e9a" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">email</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Location'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,250" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="SameAsCard" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="2015eb62-7624-400d-a1f3-a165f0e2b139" ContentHash="9YwaGMoOgECIk202tM-2Rw" DesignTimeRectangle="433, 418, 730, 48" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='submission_job_form_location_location' tag='INPUT' type='text' class='text-input location_location pac-target-input' placeholder='Enter a location' aaname='Location' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="38bc3c22-985f-4217-b303-0947e4e3fe13" InformativeScreenshot="289aa3973b8556df695b92367a8e180d.jpg" IsResponsive="True" Reference="Zot02iPf2k-vkbb_Ct6kQw/HL9RkxaNRkSt2nr8IWLp9A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="2015eb62-7624-400d-a1f3-a165f0e2b139" CvTextArea="431, 396, 59, 14" CvTextArgument="LOCATION" CvType="Text" DesignTimeRectangle="433, 398, 730, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Location' class='form-field__label' tag='LABEL' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='LOCATION' /&gt;" Guid="d1b46fb0-ebca-4b8d-85de-3c6fbc107bdb" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">location+"[k(enter)]"</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'NEXT STEP'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,198" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="e6a57f6b-e71d-4a06-a86a-787fd67b7127" ContentHash="fif2niisU0eWzPCIdXSurg" DesignTimeRectangle="433, 456, 730, 72" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='NEXT STEP' /&gt;" Guid="82b5ec1c-e945-469a-a7c0-d7a3d0a9db8c" InformativeScreenshot="23fa4bd09050a2c1d58a5edf841f6c22.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/Bl0G1Liz4023oi0PsET4FA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'Checkout'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1230" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="b7a35616-2ae0-435e-9b86-848628fca169" Version="V5">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,442" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ar:passedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="passedStep_2" str_in_actualStep="Job post navigate to checkout page" str_in_expectedStep="Job post navigate to checkout page" str_in_stepDescription="Posting job to checkout page " str_in_stepName="Checkout Job Post">
+                          <ar:passedStep.str_in_reportId>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">reportid</CSharpValue>
+                            </InArgument>
+                          </ar:passedStep.str_in_reportId>
+                          <ar:passedStep.str_in_testId>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">testid</CSharpValue>
+                            </InArgument>
+                          </ar:passedStep.str_in_testId>
+                        </ar:passedStep>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,442" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_2" str_in_actualStep="Job post does not navigate to checkout page" str_in_expectedStep="Job post navigate to checkout page" str_in_stepDescription="Posting job to checkout page " str_in_stepName="Checkout Job Post">
+                          <ar:failedStep.str_in_reportId>
+                            <InArgument x:TypeArguments="x:Int32">
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">reportid</CSharpValue>
+                            </InArgument>
+                          </ar:failedStep.str_in_reportId>
+                          <ar:failedStep.str_in_testId>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">testid</CSharpValue>
+                            </InArgument>
+                          </ar:failedStep.str_in_testId>
+                        </ar:failedStep>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="5c91fcfe-0e67-48a8-a4a4-182eb416e305" ContentHash="L8Qe0llz_0iV02ximhKiDA" DesignTimeRectangle="64, 337, 289, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Checkout' innertext='Checkout' parentid='content' /&gt;" Guid="5f18e850-7de5-40fd-b5f2-55947e5dc2c6" InformativeScreenshot="887df9e37f31a9e039f30d18ae0e6eba.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/XDdcmZiRaEKewnEbayBQRw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="486,442" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ar:failedStep sap:VirtualizedContainerService.HintSize="416,378" sap2010:WorkflowViewState.IdRef="failedStep_1" str_in_actualStep="Job Post Page does not appears" str_in_expectedStep="Job Post Page appears" str_in_stepDescription="User is posting a job " str_in_stepName="Job Post Page">
+                    <ar:failedStep.str_in_reportId>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">reportid</CSharpValue>
+                      </InArgument>
+                    </ar:failedStep.str_in_reportId>
+                    <ar:failedStep.str_in_testId>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">testid</CSharpValue>
+                      </InArgument>
+                    </ar:failedStep.str_in_testId>
+                  </ar:failedStep>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="awwwards.com/jobs/job-submission" CVScreenId="4c5de5c8-0388-4bc1-851e-90c5bc19a4f7" ContentHash="MdTzr_u9UEqjuOQdW7v17A" DesignTimeRectangle="64, 337, 289, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Job information' parentid='content' /&gt;" Guid="d3ce25d3-87ff-4fde-9473-39865cfff202" InformativeScreenshot="1f52c8a0c65acd617ec797c24ba6b367.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/ucwo3JQF5kuYzwm0nMGESw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Job Submission' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.CloseMode>
+        <InArgument x:TypeArguments="uix:NAppCloseMode">
+          <CSharpValue x:TypeArguments="uix:NAppCloseMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">UiPath.UIAutomationNext.Enums.NAppCloseMode.Never</CSharpValue>
+        </InArgument>
+      </uix:NApplicationCard.CloseMode>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.OpenMode>
+        <InArgument x:TypeArguments="uix:NAppOpenMode">
+          <CSharpValue x:TypeArguments="uix:NAppOpenMode" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">UiPath.UIAutomationNext.Enums.NAppOpenMode.Never</CSharpValue>
+        </InArgument>
+      </uix:NApplicationCard.OpenMode>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1616, 868" BrowserType="Edge" ContentHash="YEaBWI9Jjkm4TFm1KRCoGw" IconBase64="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" InformativeScreenshot="b8f0eb766724f61f2417c7c64fd358f7.jpg" Reference="Zot02iPf2k-vkbb_Ct6kQw/f4u7BWTG_EGiyYldDqbsOA" Selector="&lt;html app='msedge.exe' title='Settings - Cynthia_Clawhauser' /&gt;" Url="https://www.awwwards.com/settings/jobs" Version="V2">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
