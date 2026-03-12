@@ -131,7 +131,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC02_BePro_PlanSelect" sap:VirtualizedContainerService.HintSize="702,3364" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC02_BePro_PlanSelect" sap:VirtualizedContainerService.HintSize="702,3688" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Data" />
     </Sequence.Variables>
@@ -140,41 +140,41 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="488,545" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+    <ar:infoStep sap:VirtualizedContainerService.HintSize="488,383" sap2010:WorkflowViewState.IdRef="infoStep_4" str_in_actualStep="Plan is selected" str_in_expectedStep="Plann should be selected" str_in_stepDescription="Selecting the plan" str_in_stepName="Plan_Selected">
+      <ar:infoStep.str_in_reportId>
+        <InArgument x:TypeArguments="x:Int32">
+          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">int_ReportId</CSharpValue>
+        </InArgument>
+      </ar:infoStep.str_in_reportId>
+      <ar:infoStep.str_in_testId>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">str_TestId</CSharpValue>
+        </InArgument>
+      </ar:infoStep.str_in_testId>
+    </ar:infoStep>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="488,389" sap2010:WorkflowViewState.IdRef="CommentOut_6">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,434" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="Sequence_23">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ar:infoStep sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="infoStep_3" str_in_actualStep="Plan is selected" str_in_expectedStep="Plann should be selected" str_in_stepDescription="Selecting the plan" str_in_stepName="Plan_Selected">
-            <ar:infoStep.str_in_reportId>
-              <InArgument x:TypeArguments="x:Int32">
-                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">int_ReportId</CSharpValue>
-              </InArgument>
-            </ar:infoStep.str_in_reportId>
-            <ar:infoStep.str_in_testId>
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="gurneet">
+            <ui:ReadRange.DataTable>
+              <OutArgument x:TypeArguments="sd:DataTable">
+                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dt_Data</CSharpReference>
+              </OutArgument>
+            </ui:ReadRange.DataTable>
+            <ui:ReadRange.WorkbookPath>
               <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">str_TestId</CSharpValue>
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">@"C:\Users\Testing\Documents\AwwardsTestingLibrary\TestData\Group07_DataFetching.xlsx"</CSharpValue>
               </InArgument>
-            </ar:infoStep.str_in_testId>
-          </ar:infoStep>
+            </ui:ReadRange.WorkbookPath>
+          </ui:ReadRange>
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="gurneet">
-      <ui:ReadRange.DataTable>
-        <OutArgument x:TypeArguments="sd:DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dt_Data</CSharpReference>
-        </OutArgument>
-      </ui:ReadRange.DataTable>
-      <ui:ReadRange.WorkbookPath>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">@"C:\Users\Testing\Documents\AwwardsTestingLibrary\TestData\Group07_DataFetching.xlsx"</CSharpValue>
-        </InArgument>
-      </ui:ReadRange.WorkbookPath>
-    </ui:ReadRange>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
@@ -182,30 +182,52 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_4">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">PlanType</CSharpReference>
-        </OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">dt_Data.Rows[0]["Plantype"].ToString()</CSharpValue>
-        </InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_5">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">PlanCurrent</CSharpReference>
-        </OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">dt_Data.Rows[0]["PlanCurrent"].ToString()</CSharpValue>
-        </InArgument>
-      </Assign.Value>
-    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="488,337" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">PlanType</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">dt_Data.Rows[0]["Plantype"].ToString()</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="488,337" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_25">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">PlanCurrent</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">dt_Data.Rows[0]["PlanCurrent"].ToString()</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
     <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Awwwards(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2044" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="e9a220af-b54b-44b7-a93d-797cdc8c63cd" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
